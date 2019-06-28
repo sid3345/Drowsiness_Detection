@@ -3,6 +3,7 @@ from imutils import face_utils
 import imutils
 import dlib
 import cv2
+import winsound
 
 def eye_aspect_ratio(eye):
 	A = distance.euclidean(eye[1], eye[5])
@@ -14,7 +15,7 @@ def eye_aspect_ratio(eye):
 thresh = 0.25
 frame_check = 20
 detect = dlib.get_frontal_face_detector()
-predict = dlib.shape_predictor("E:\Github projects\Drowsiness_Detection_fork\shape_predictor_68_face_landmarks.dat")# Dat file is the crux of the code
+predict = dlib.shape_predictor("E:\SIDDHARTH\engineering stuff & programming\Drowsiness_Detection-master\shape_predictor_68_face_landmarks.dat")# Dat file is the crux of the code
 
 (lStart, lEnd) = face_utils.FACIAL_LANDMARKS_68_IDXS["left_eye"]
 (rStart, rEnd) = face_utils.FACIAL_LANDMARKS_68_IDXS["right_eye"]
@@ -45,6 +46,8 @@ while True:
 					cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 				cv2.putText(frame, "****************ALERT!****************", (10,325),
 					cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
+				winsound.Beep(500,200)
+				#print ("\a")
 				#print ("Drowsy")
 		else:
 			flag = 0
