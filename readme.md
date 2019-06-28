@@ -2,7 +2,7 @@
 This code can detect your eyes and alert when the user is drowsy.
 
 ## Applications
-This can be used by riders who tend to drive for a longer period of time that may lead to accidents
+This can be used by drivers, especially truck drivers who tend to drive for a longer period of time that may lead to accidents
 
 
 ### Code Requirements
